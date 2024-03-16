@@ -13,26 +13,26 @@ package edu.cmu.cs.cs214.rec04;
 public class DelegationSortedIntList implements IntegerList{
     // Write your implementation below with API documentation
     SortedIntList sil;
-    private int count;
+    private int totalAdded;
     public DelegationSortedIntList(){
         this.sil = new SortedIntList();
-        this.count = 0;
+        this.totalAdded = 0;
     }
 
     public boolean add(int value){
         boolean result = this.sil.add(value);
-        if(result) this.count++;
+        if(result) this.totalAdded++;
         return result;
     }
 
     public boolean addAll(IntegerList value){
         boolean result = this.sil.addAll(value);
-        if(result) this.count += value.size();
+        if(result) this.totalAdded += value.size();
         return result;
     }
 
     public int getTotalAdded(){
-        return this.count;
+        return this.totalAdded;
     }
 
     public int get(int value){

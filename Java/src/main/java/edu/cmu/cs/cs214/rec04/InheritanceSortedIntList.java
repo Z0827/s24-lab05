@@ -11,24 +11,25 @@ package edu.cmu.cs.cs214.rec04;
  */
 
 public class InheritanceSortedIntList extends SortedIntList{
-    private int addCount;
+    private int totalAdded;
 
     public InheritanceSortedIntList(){
-        this.addCount = 0;
+        super();
+        this.totalAdded = 0;
     }
 
     public boolean add(int value){
         boolean result = super.add(value);
-        if(result) addCount++;
+        this.totalAdded++;
         return result;
     }
     public boolean addAll(IntegerList value){
         boolean result = super.addAll(value);
-        if(result) addCount += value.size();
+        //this.totalAdded += value.size();
         return result;
     }
     // Write your implementation below with API documentation
     public int getTotalAdded(){
-        return this.addCount;
+        return this.totalAdded;
     }
 }
